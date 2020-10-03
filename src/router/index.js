@@ -6,8 +6,16 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/im',
-    name: 'Chat',
-    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+    name: 'Home',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
+    children: [
+      {
+        path: 'chat/:id',
+        name: 'Chat',
+        component: () =>
+          import(/* webpackChunkName: "chat" */ '../views/Chat.vue')
+      }
+    ]
   },
   {
     path: '/auth',
