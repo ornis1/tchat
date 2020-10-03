@@ -68,7 +68,7 @@ export default {
     },
     handleStartTouch() {
       // Turn on only on mobile
-      if (!this.$vuetify.breakpoint.xs) return {}
+      if (!this.$vuetify.breakpoint.smAndDown) return
       clearTimeout(this.timeoutId)
       this.timeoutId = setTimeout(() => {
         this.vibrate(70)
@@ -86,8 +86,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.message {
+  max-width: 450px !important;
+}
 >>>.message {
-  max-width: 450px;
   white-space: normal !important;
 }
 

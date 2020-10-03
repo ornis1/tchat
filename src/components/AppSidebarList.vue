@@ -37,7 +37,7 @@ export default {
   methods: {
     ...mapActions('sidebar', ['setGroups'])
   },
-  create() {
+  created() {
     this.setGroups()
   }
 }
