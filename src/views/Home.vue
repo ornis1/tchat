@@ -1,22 +1,18 @@
 <template>
   <div class="d-flex fill-height">
-    <v-chip v-if="!chatId" disabled class=" ma-auto">
+    <v-chip v-if="show" disabled class="ma-auto">
       Please select a chat to start messaging
     </v-chip>
-    <Chat v-else />
-    <!-- <h1>CHat {{ $route.query.p }}</h1> -->
+    <router-view v-else></router-view>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
-  components: {
-    Chat: () => import('@/components/Chat/Chat')
-  },
   computed: {
-    chatId() {
-      return this.$route.query.p
+    show() {
+      return this.$route.name === 'Home' && !this.$vuetify.breakpoint.xs
     }
   }
 }
