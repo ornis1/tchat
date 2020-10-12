@@ -7,7 +7,7 @@ export default {
   state: {
     messages: [],
     info: null,
-    bottomDrawer: null,
+    bottomDrawer: false,
     selectedMessage: null
   },
   mutations: {

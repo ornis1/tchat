@@ -59,6 +59,10 @@ export default {
   },
   methods: {
     ...mapActions('chat', ['setBottomDrawer', 'deleteMessage'])
+  },
+  beforeDestroy() {
+    console.log('destroy')
+    this.setBottomDrawer(false)
   }
 }
 </script>
