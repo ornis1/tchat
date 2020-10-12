@@ -1,5 +1,5 @@
 <template>
-  <v-list-item transition="slide-x-transition" :ripple="false" class="message">
+  <v-list-item :ripple="false" class="message">
     <v-list-item-avatar class="mt-auto mb-0">
       <v-img :src="message.sender.photo" />
     </v-list-item-avatar>

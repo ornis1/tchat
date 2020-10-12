@@ -2,16 +2,14 @@
   <v-container>
     <v-list flat color="transparent">
       <v-row>
-        <transition-group name="list">
-          <v-col
-            v-for="message in messages"
-            :key="message.id"
-            cols="12"
-            class="pa-0"
-          >
-            <ChatMessage :message="message" />
-          </v-col>
-        </transition-group>
+        <v-col
+          v-for="message in messages"
+          :key="message.id"
+          cols="12"
+          class="pa-0"
+        >
+          <ChatMessage :message="message" />
+        </v-col>
       </v-row>
     </v-list>
   </v-container>
@@ -47,16 +45,3 @@ export default {
   }
 }
 </script>
-<style>
-.list-enter-active,
-.list-leave-active {
-  transition: all 0.3s;
-}
-.list-enter {
-  opacity: 0;
-}
-.list-leave-to /* .list-leave-active до версии 2.1.8 */ {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-</style>
