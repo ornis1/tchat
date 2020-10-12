@@ -102,7 +102,6 @@ export default {
   },
   watch: {
     file(val) {
-      console.log(val)
       if (val) {
         this.previewImage()
       }
